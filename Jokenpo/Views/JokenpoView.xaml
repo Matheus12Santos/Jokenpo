@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jokenpo.Views.JokenpoView">
+    <VerticalStackLayout>
+        <Label 
+            Text="Jokenpo"
+            FontSize="Header"
+            HorizontalOptions="Center" />
+        <Label
+            Text="{Binding JogadorPontuacao}"
+            HorizontalOptions="Center"/>
+        <Label
+            Text="{Binding BotPontuacao}"
+            HorizontalOptions="Center"/>
+        <Image/>
+        <Label
+            Text="{Binding Resultado}"/>
+        <Picker
+            Title="Escolha o gesto"
+            HorizontalOptions="Center"
+            SelectedIndex="{Binding Escolha}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Pedra</x:String>
+                    <x:String>Papel</x:String>
+                    <x:String>Tesoura</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button
+            Text="Jogar"
+            HorizontalOptions="Center"
+            Command="{Binding JogarCommand}"/>
+    </VerticalStackLayout>
+</ContentView>
